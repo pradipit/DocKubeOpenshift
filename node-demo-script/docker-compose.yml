@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mynodev1:
+    container_name: mynodev1
+    image: pc/mynode:v1
+    hostname: mynodev1
+    ports:
+      - "8081:8000"
+  mynodev2:
+    container_name: mynodev2
+    image: pc/mynode:v2
+    hostname: mynodev2
+    ports:
+      - "8082:8000"
