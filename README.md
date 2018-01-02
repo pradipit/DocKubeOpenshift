@@ -36,13 +36,16 @@ minishift docker-env
 ```
 
 List the running containers and images inside the minishift
-
-> docker images
-> docker ps
+```
+docker images
+docker ps
+```
 
 Get the console URL:
-> minishift console --url
-> developer/test
+```
+minishift console --url
+developer/test
+```
 
 Now we will build docker images from Dockerfile
 
@@ -114,7 +117,7 @@ kubectl get namespaces
 **Pods:**
 
 ```
-kubectl get pods
+ kubectl get pods
  kubectl --namespace=kubedemo get pods
  ./2_create-pod.sh
  kubectl --namespace=kubedemo get pods
@@ -137,7 +140,9 @@ kubectl --namespace=kubedemo get services mynode
 
 Now, hit http://192.168.99.100:30643/ link on browser
 
-> kubectl --namespace=kubedemo describe svc mynode *
+```
+kubectl --namespace=kubedemo describe svc mynode *
+```
 
 **Deployments:**
 When you create pod it will create deployment for you.
@@ -148,11 +153,14 @@ kubectl --namespace=kubedemo get pods
 ```
 
 Now curl this url multiple time to see load get distributed 
-> curl 192.168.99.100:30643
+```
+curl 192.168.99.100:30643
+```
 
 Or 
-
->./5_curl_service.sh
+```
+./5_curl_service.sh
+```
 
 **Rolling Upgrade:**
 https://ryaneschinger.com/blog/rolling-updates-kubernetes-replication-controllers-vs-deployments/
@@ -173,16 +181,20 @@ http://mynode-kubedemo.192.168.99.100.nip.io/
 ```
 
 **Clean up:**
-> ./7_cleanup.sh
+```
+./7_cleanup.sh
+```
 
 **Proxy:**
 This command starts a proxy to the Kubernetes API server:
-> kubectl proxy 
-	Starting to serve on 127.0.0.1:8001
+```
+kubectl proxy 
+```
+Starting to serve on 127.0.0.1:8001
 
 Hit http://localhost:8001/api/v1/namespaces/kubedemo/pods/mynode-3397586514-4fv5p link on browser to get the details pod yaml content.
 
 To ssh minishift VM
 ```
-    minishift ssh
+minishift ssh
 ```
